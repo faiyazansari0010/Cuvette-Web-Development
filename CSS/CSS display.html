@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .container{
+    display: flex;
+  }
+  .right {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .right .text {
+    float: right;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left iframe {
+    width: 500px;
+    height: 400px;
+  }
+
+  .right iframe {
+    margin-left: 40px;
+    width: 120px;
+    height: 80px;
+  }
+
+  .right div{
+    margin-bottom: 10px;
+  }
+
+  .heading{
+    font-weight: bold;
+  }
+</style>
+
+<body>
+  <div class="container">
+
+    <div class="left">
+      <iframe src = "https://www.youtube.com/embed/llAYUWXV7CI"></iframe>
+      <p class="heading">Animated Cartoon for Children | 2023</p>
+    </div>
+
+    <div class="right">
+      <div>
+        <iframe src="https://www.youtube.com/embed/llAYUWXV7CI"></iframe>
+        <div class="text">
+          <p class="heading">Video 1</p>
+          <p>Short description for video 1</p>
+        </div>
+      </div>
+
+      <div>
+        <iframe src="https://www.youtube.com/embed/llAYUWXV7CI"></iframe>
+        <div class="text">
+          <p class="heading">Video 2</p>
+          <p>Short description for video 2</p>
+        </div>
+      </div>
+
+      <div>
+        <iframe src="https://www.youtube.com/embed/llAYUWXV7CI"></iframe>
+        <div class="text">
+          <p class="heading">Video 3</p>
+          <p>Short description for video 3</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+
+  table{
+    width: 90vw;
+  }
+  th{
+    background-color: rgba(136,136,136,255);
+    color: white;
+  }
+  table, th, tr, td{
+    border: 1px solid rgba(255,220,183,255);
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  .st1 td:first-child{
+    text-align: right;
+    padding-right: 0.2rem;
+  }
+
+  .st2 td:first-child{
+    text-align: right;
+    padding-right: 0.2rem;
+  }
+</style>
+
+<body>
+  
+  <table>
+    <tr>
+      <th>Firm</th>
+      <th>Org</th>
+      <th>Lab</th>
+      <th>Sub Lab</th>
+      <th>Business Plans</th>
+      <th>Business Components</th>
+    </tr>
+
+    <tr>
+      <td rowspan="11">XYZ</td>
+      <td rowspan="5">CST</td>
+      <td rowspan="3">CT</td>
+      <td>ADS</td>
+      <td>1</td>
+      <td>10</td>
+    </tr>
+
+    <tr>
+      <td>BTO</td>
+      <td>2</td>
+      <td>15</td>
+    </tr>
+
+    <tr>
+      <td>CSI</td>
+      <td>3</td>
+      <td>6</td>
+    </tr>
+
+    <tr>
+      <td rowspan="2">VCT</td>
+      <td>ADS</td>
+      <td>4</td>
+      <td>10</td>
+    </tr>
+
+    <tr>
+      <td>BTO</td>
+      <td>5</td>
+      <td>15</td>
+    </tr>
+
+    <tr class="st1">
+      <td colspan="3">Sub Total</td>
+      <td>6</td>
+      <td>15</td>
+    </tr>
+
+    <tr>
+      <td rowspan="4">CST</td>
+      <td rowspan="3">CT</td>
+      <td>ADS</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
+
+    <tr>
+      <td>BTO</td>
+      <td>8</td>
+      <td>15</td>
+    </tr>
+
+    <tr>
+      <td>CSI</td>
+      <td>9</td>
+      <td>6</td>
+    </tr>
+
+    <tr>
+      <td>VCT</td>
+      <td>ADS</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+
+    <tr class="st2">
+      <td colspan="3">Sub Total</td>
+      <td>11</td>
+      <td>15</td>
+    </tr>
+  </table>
+
+</body>
+</html>

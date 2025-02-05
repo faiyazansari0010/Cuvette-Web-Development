@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .t1{
+    position:relative;
+    top: 100px;
+    left: 150px;
+    width: 0px;
+    height: 0px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid yellow;
+  }
+
+  .t2{
+    position:absolute;
+    top: 30px;
+    left: -50px;
+    width: 0px;
+    height: 0px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid yellow;
+  }
+</style>
+
+<body>
+
+  <h3>How do CSS triangles work?</h3>
+
+  <div class="t1">
+    <div class="t2"></div>
+  </div>
+</body>
+</html>

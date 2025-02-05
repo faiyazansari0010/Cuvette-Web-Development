@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment Section</title>
+</head>
+<style>
+  body {
+    margin: 40px;
+  }
+
+  .comment-section {
+    width: 50%;
+    margin: auto;
+  }
+
+  .comment-section h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .comment-section p {
+    margin: 5px 0;
+  }
+
+  textarea {
+    width: 100%;
+    height: 60px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 5px 15px;
+  }
+
+  .comments {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+
+  .comment {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f4f4f4;
+  }
+
+  .comment p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .comment .author {
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+    margin-top: 5px;
+  }
+
+  .comment .date {
+    font-size: 12px;
+    color: #999;
+  }
+</style>
+
+<body>
+  <div class="comment-section">
+    <h2>Comments</h2>
+    <p>Share your thoughts below!</p>
+    <textarea placeholder="Write your comment here..."></textarea>
+    <button type="submit">Submit</button>
+
+    <div class="comments">
+      <div class="comment">
+        <p>This is an excellent article!</p>
+        <span class="author">Akash</span>
+        <span class="date">Today</span>
+      </div>
+      <div class="comment">
+        <p>I totally agree.</p>
+        <span class="author">Mrityunjay</span>
+        <span class="date">Yesterday</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
