@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Shelf</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    .shelf {
+      position: relative;
+      width: 200px;
+      height: 300px;
+      border: 2px solid black;
+      transform: perspective(600px) rotateX(30deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .level {
+      position: relative;
+      height: 2px;
+      background: black;
+    }
+
+    .level:before,
+    .level:after {
+      content: '';
+      position: absolute;
+      background: black;
+    }
+
+    .level:before {
+      top: -1px;
+      left: -50%;
+      width: 200%;
+      height: 2px;
+      transform: skewX(-45deg);
+    }
+
+    .level:after {
+      top: -1px;
+      right: -50%;
+      width: 200%;
+      height: 2px;
+      transform: skewX(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="shelf">
+    <div class="level"></div>
+    <div class="level"></div>
+    <div class="level"></div>
+  </div>
+</body>
+</html>

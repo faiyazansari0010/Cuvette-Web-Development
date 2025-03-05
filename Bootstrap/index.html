@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Flexbox Template</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .hero-section {
+      position: relative;
+      height: 400px;
+      background: url('./hero.jpg') no-repeat center center/cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-text {
+      position: relative;
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      top: 300px;
+      transform: translateY(-50%);
+    }
+
+    .logo1 {
+      position: relative;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      top: 30px;
+      transform: translateY(-50%);
+    }
+
+    .work-image {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      color: #007bff;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 10px 0;
+      background-color: #f8f9fa;
+    }
+
+    .navg ul {
+      display: flex;
+      justify-content: end;
+      list-style-type: none;
+      position: relative;
+      top: -4px;
+    }
+
+    li {
+      float: left;
+      color: white;
+      margin-right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero-section mx-5 my-5">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="logo1">
+        Website Logo
+      </div>
+      <div class="navg">
+        <ul>
+          <li>Home</li>
+          <li>Products</li>
+          <li>About</li>
+          <li>Contacts</li>
+        </ul>
+      </div>
+      <div class="hero-text">Responsive Flexbox Template</div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="text-center">
+      <h3>Some Of Our Work</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et libero elementum elit euismod aliquam.</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <img src="./coast.jpg" class="img-fluid work-image w-100" alt="Coast Image">
+      </div>
+      <div class="col-md-8">
+        <img src="./island.jpg" class="img-fluid work-image w-100" alt="Island Image">
+      </div>
+      <div class="col-md-8">
+        <img src="./balloon.jpg" class="img-fluid work-image w-100" alt="Balloon Image">
+      </div>
+      <div class="col-md-4">
+        <img src="./mountain.jpg" class="img-fluid work-image w-100" alt="Mountain Image">
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5 text-center">
+    <h3>Features And Services</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et libero elementum elit euismod aliquam.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-icon">&#128247;</div>
+        <h5>Photography</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et libero elementum.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-icon">&#128187;</div>
+        <h5>Web Development</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et libero elementum.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-icon">&#128736;</div>
+        <h5>Content Editing</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et libero elementum.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Responsive Flexbox Template. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>
