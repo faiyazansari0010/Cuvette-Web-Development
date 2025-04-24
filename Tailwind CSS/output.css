@@ -8,11 +8,9 @@
       "Courier New", monospace;
     --color-yellow-200: oklch(0.945 0.129 101.54);
     --color-green-200: oklch(0.925 0.084 155.995);
-    --color-blue-200: oklch(0.882 0.059 254.128);
-    --color-blue-500: oklch(0.623 0.214 259.815);
-    --text-xl: 1.25rem;
-    --text-xl--line-height: calc(1.75 / 1.25);
-    --font-weight-bold: 700;
+    --color-gray-900: oklch(0.21 0.034 264.665);
+    --color-white: #fff;
+    --spacing: 0.25rem;
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
     --default-font-variation-settings: var(
@@ -175,6 +173,12 @@
   .relative {
     position: relative;
   }
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .block {
     display: block;
   }
@@ -187,6 +191,21 @@
   .table {
     display: table;
   }
+  .h-auto {
+    height: auto;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
+  .w-1\/2 {
+    width: calc(1/2 * 100%);
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
+  .w-auto {
+    width: auto;
+  }
   .border-collapse {
     border-collapse: collapse;
   }
@@ -197,25 +216,17 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .bg-blue-200 {
-    background-color: var(--color-blue-200);
-  }
-  .bg-blue-500 {
-    background-color: var(--color-blue-500);
+  .bg-gray-900 {
+    background-color: var(--color-gray-900);
   }
   .bg-green-200 {
     background-color: var(--color-green-200);
   }
-  .bg-yellow-200 {
-    background-color: var(--color-yellow-200);
+  .text-white {
+    color: var(--color-white);
   }
-  .text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
+  .text-white\/90 {
+    color: color-mix(in oklab, var(--color-white) 90%, transparent);
   }
   .underline {
     text-decoration-line: underline;
@@ -224,25 +235,10 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
-  .hover\:bg-green-200 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-green-200);
-      }
-    }
-  }
   .hover\:bg-yellow-200 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-yellow-200);
-      }
-    }
-  }
-  .hover\:text-xl {
-    &:hover {
-      @media (hover: hover) {
-        font-size: var(--text-xl);
-        line-height: var(--tw-leading, var(--text-xl--line-height));
       }
     }
   }
@@ -251,10 +247,6 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
-}
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
 }
 @property --tw-outline-style {
   syntax: "*";
