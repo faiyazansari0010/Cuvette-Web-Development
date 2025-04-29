@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <header class="bg-gray-900 items-center text-white/90 flex justify-between w-full top-0 z-20 sticky px-5 py-4">
+    <div class="font-bold text-5xl">Faiyaz Ansari</div>
+    <nav class="max-sm:hidden">
+      <a class="bg-white/90 hover:bg-white/60 text-gray-900 px-2 py-2 rounded-md mr-3 text-xl" href="#">Home</a>
+      <a class="bg-white/90 hover:bg-white/60 text-gray-900 px-2 py-2 rounded-md mr-3 text-xl" href="#">About Me</a>
+      <a class="bg-white/90 hover:bg-white/60 text-gray-900 px-2 py-2 rounded-md mr-3 text-xl" href="#">Projects</a>
+      <a class="bg-white/90 hover:bg-white/60 text-gray-900 px-2 py-2 rounded-md mr-3 text-xl" href="#">Contact</a>
+    </nav>
+
+    <div class="text-2xl sm:hidden">&#9776;</div>
+  </header>
+
+  <section id="hero"
+    class="relative h-screen bg-[url('./bg-hero.jpg')] bg-cover bg-no-repeat flex flex-col items-center justify-center text-white text-center p-5">
+
+    <div class="absolute w-screen h-screen top-0 left-0 bg-black opacity-50 "></div>
+
+    <h1 class="z-10 text-3xl sm:text-5xl lg:text-7xl font-bold mb-4">Hello, I'm Faiyaz !</h1>
+    <p class="z-10 text-xl sm:text-2xl lg:text-4xl mb-8">Web Developer, Web Designer and Tech Geek</p>
+    <a href="#project"
+      class="z-10 bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg text-sm sm:text-base">
+      View My Work
+    </a>
+
+  </section>
+
+  <section id="about" class="flex flex-col items-center p-8 bg-gray-100 text-center">
+
+    <img src="./profile_pic.JPG" alt="profile_pic" class="w-60 h-60 rounded-full shadow-lg mb-6 object-cover">
+
+    <p class="max-w-2xl text-gray-900 text-lg mb-8">
+      Hi, I'm Faiyaz! I'm a passionate web developer with a strong background in front-end technologies.
+      I love crafting beautiful and functional websites using HTML, CSS, JavaScript, and modern frameworks.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-gray-800">
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">HTML</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">CSS</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">JavaScript</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">Tailwind CSS</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">React JS</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">C++</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">Data Structures</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">Algorithms</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">Bootstrap</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">My SQL</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">Git & Github</div>
+      <div class="bg-white p-4 rounded-lg shadow-md hover:bg-gray-400">Redux</div>
+    </div>
+
+  </section>
+
+  <section id="project" class="bg-gray-100 p-6 pb-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">Projects</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+        <img src="./excel_pic.JPG" alt="Project 1 Img" class="rounded-md mb-4">
+        <h3 class="text-xl font-semibold mb-2">Microsoft Excel Clone</h3>
+        <p class="text-gray-700 text-sm mb-3">
+          A clone of <span class="font-bold">MS Excel</span> with basic features like
+          <span class="font-bold">Searching and Sorting Data, Multiple Cells Selection, Finding and
+            Replacing
+            Data, Generating Graphs and Calculating Avgerages</span> based
+          on selected data.
+        </p>
+        <a href="https://faiyazansari0010.github.io/Microsoft-Excel-Clone/"
+          class="text-blue-600 hover:underline font-medium">View Project</a>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+        <img src="./spotify_pic.JPG" alt="Project 2 Img" class="rounded-md mb-4 h-75">
+        <h3 class="text-xl font-semibold mb-2">Spotofy App Clone</h3>
+        <p class="text-gray-700 text-sm mb-3">
+          Clone of Spotify Music Player which can play
+          music and has features like play, pause, switch
+          music, fast forward and backward.
+        </p>
+        <a href="https://faiyazansari0010.github.io/Spotify-Clone/"
+          class="text-blue-600 hover:underline font-medium">View Project</a>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+        <img src="./TicTac_pic.JPG" alt="Project 3 Img" class="rounded-md mb-4 h-70">
+        <h3 class="text-xl font-semibold mb-2">Tic-Tac-Toe Game</h3>
+        <p class="text-gray-700 text-sm mb-3">
+          Tic Tac Toe Game that can draw cross and
+          zero and indicates whose turn it is next and
+          displays the winner. It can reset at any point at
+          the click of a button. </p>
+        <a href="https://faiyazansari0010.github.io/Tic-Tac-Toe-Game/" class="text-blue-600 hover:underline font-medium">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="flex flex-col items-center bg-gray-100 px-4 py-10">
+    <h2 class="mb-8 text-center text-3xl font-bold md:text-4xl">Contact Me</h2>
+  
+    <form class="w-full max-w-3xl space-y-4">
+      <div>
+        <label for="name" class="block font-medium text-gray-900">Name</label>
+        <input type="text" id="name" name="name" class="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-900 focus:outline-none" placeholder="Your name" required />
+      </div>
+  
+      <div>
+        <label for="email" class="block font-medium text-gray-900">Email</label>
+        <input type="email" id="email" name="email" class="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none" placeholder="your@example.com" required />
+      </div>
+  
+      <div>
+        <label for="message" class="block font-medium text-gray-900">Message</label>
+        <textarea id="message" name="message" rows="5" class="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none" placeholder="Your message..." required></textarea>
+      </div>
+  
+      <button type="submit" class="cursor-pointer rounded-md bg-green-600 px-6 py-2 text-white transition-colors duration-300 hover:bg-green-800">Send Message</button>
+    </form>
+  
+    <div class="mt-8 flex justify-center space-x-6 text-2xl text-gray-700">
+      <a href="https://www.linkedin.com/in/faiyaz-ansari-580b451a4" class="duration-200 hover:text-blue-600">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/faiyazansari0010" class="duration-200 hover:text-blue-600">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="#" class="duration-200 hover:text-blue-400">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </section>
+  
+  <footer class="bg-gray-800 text-white py-6 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between text-center space-y-4 md:space-y-0">
+      
+      <div class="text-sm">
+        © 2025 Faiyaz Ansari
+      </div>
+      
+      <div class="space-x-6 text-sm">
+        <a href="#" class="hover:underline hover:text-gray-300 transition-colors duration-200">Privacy Policy</a>
+        <a href="#" class="hover:underline hover:text-gray-300 transition-colors duration-200">Terms of Service</a>
+      </div>
+  
+    </div>
+  </footer>
+  
+
+</body>
+
+</html>
