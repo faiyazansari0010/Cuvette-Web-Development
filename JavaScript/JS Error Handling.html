@@ -1,0 +1,48 @@
+<label for="input1">Enter value:- </label>
+<input type="text" id="input1" />
+<button type="button" onclick="evalString()">Test</button>
+
+<script>
+  class OutOfRangeError extends Error {
+    constructor(arg) {
+      super(`Expression should only consist of integers and +-/* characters and not ${arg}`);
+      this.name = "OutOfRangeError";
+    }
+  }
+
+  class InvalidExprError extends Error {
+    constructor() {
+      super("Expression should not have an invalid combination of expression");
+      this.name = "InvalidExprError";
+    }
+  }
+
+  function evalString() {
+    const input = document.getElementById("input1").value.trim();
+
+    try {
+      if (/[^0-9+\-*/\s]/.test(input)) {
+        const invalidChar = input.match(/[^0-9+\-*/\s]/)[0];
+        throw new OutOfRangeError(invalidChar);
+      }
+
+      if (/[+\-*/]{2,}/.test(input.replace(/\s+/g, ""))) {
+        throw new InvalidExprError();
+      }
+
+      const trimmed = input.replace(/\s+/g, "");
+      if (/^[+*/]/.test(trimmed)) {
+        throw new SyntaxError("Expression should not start with invalid operator");
+      }
+
+      if (/[+\-*/]$/.test(trimmed)) {
+        throw new SyntaxError("Expression should not end with invalid operator");
+      }
+
+      const result = eval(trimmed);
+      alert(`Result: ${result}`);
+    } catch (err) {
+      alert(`${err.name}: ${err.message}`);
+    }
+  }
+</script>

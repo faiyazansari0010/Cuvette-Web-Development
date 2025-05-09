@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+function isEqual(a, b) {
+  if (a === b) return true;
+
+  if (Array.isArray(a) && Array.isArray(b)) {
+    if (a.length !== b.length) return false;
+    return a.every((el, i) => isEqual(el, b[i]));
+  }
+
+  if (typeof a === 'object' && typeof b === 'object' && a && b) {
+    const keysA = Object.keys(a);
+    const keysB = Object.keys(b);
+    if (keysA.length !== keysB.length) return false;
+    return keysA.every(key => keysB.includes(key) && isEqual(a[key], b[key]));
+  }
+
+  return false;
+}
+
+function includesOneOf(array, values) {
+  if (!Array.isArray(array) || !Array.isArray(values) || values.length === 0) {
+    return false;
+  }
+
+  return values.some(val =>
+    array.some(item => isEqual(item, val))
+  );
+}
+
+</script>
+</body>
+</html>
