@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+
+  <style>
+    .gameContainer {
+      width: 400px;
+      height: 400px;
+      border: 2px solid black;
+      display: grid;
+      grid-template-columns: repeat(40, 10px);
+      grid-template-rows: repeat(40, 10px);
+    }
+
+    .foodPixel {
+      background-color: blue;
+    }
+
+    .snakePixel {
+      background-color: green;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="gameContainer"></div>
+  <div>Score : <span class="score">0</span></div>
+
+
+  <script>
+    let direction = 1;
+    let score = 0;
+    let snake = [761];
+    let totalPixels = 1600;
+    let gameContainer = document.querySelector('.gameContainer');
+
+    for (let i = 1; i <= totalPixels; i++) {
+      let pixel = document.createElement('div');
+      pixel.id = 'pixel' + i;
+      gameContainer.appendChild(pixel);
+    }
+
+    function drawSnake() {
+      document.querySelectorAll('.snakePixel').forEach(
+        p => p.classList.remove('snakePixel')
+      )
+      snake.forEach(
+        pixel => document.getElementById('pixel' + pixel).classList.add('snakePixel'))
+    }
+
+    function createFood() {
+      let prevFoodPixel = document.querySelector('.foodPixel');
+      if (prevFoodPixel) {
+        prevFoodPixel.classList.remove('foodPixel');
+      }
+      let newFoodPixel;
+      do {
+        newFoodPixel = Math.floor(Math.random() * totalPixels) + 1;
+      } while (snake.includes(newFoodPixel));
+      document.getElementById('pixel' + newFoodPixel).classList.add('foodPixel');
+    }
+
+    function moveSnake() {
+      let head = snake[0];
+      let newHead = head + direction;
+
+      if (direction === 1 && head % 40 === 0) newHead = head - 39;
+      if (direction === -1 && (head - 1) % 40 === 0) newHead = head + 39; 
+      if (direction === 40 && head > 1560) newHead = head - 1560; 
+      if (direction === -40 && head <= 40) newHead = head + 1560;
+
+
+      if (snake.includes(newHead)) {
+        alert('Game Over!');
+        clearInterval(gameLoop);
+        return;
+      }
+
+
+      snake.unshift(newHead);
+      let foodPixel = document.querySelector('.foodPixel');
+      if (foodPixel && foodPixel.id === ('pixel' + snake[0])) {
+        score++;
+        document.querySelector('.score').innerHTML = score;
+        createFood();
+      }
+      else {
+        snake.pop();
+      }
+
+      drawSnake();
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowUp' && direction !== 40) direction = -40;
+      if (e.key === 'ArrowDown' && direction !== -40) direction = 40;
+      if (e.key === 'ArrowLeft' && direction !== 1) direction = -1;
+      if (e.key === 'ArrowRight' && direction !== -1) direction = 1;
+    });
+
+    drawSnake();
+    createFood();
+    const gameLoop = setInterval(moveSnake, 100);
+  </script>
+</body>
+
+</html>
