@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expandable Image Grid</title>
+  <style>
+    img {
+      width: 150px;
+      height: 150px;
+      transition: 0.4s;
+      cursor: pointer;
+    }
+
+    .container {
+      width: 450px;
+      height: 450px;
+      position: relative;
+      display: grid;
+      gap: 1px;
+      grid-template-columns: repeat(3, 150px);
+      grid-template-rows: repeat(3, 150px);
+    }
+
+    .expand {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 455px;
+      width: 455px;
+      transition: 0.4s;
+    }
+
+    .remove {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img id="image1" src="./img1.jpeg" alt="image">
+    <img id="image2" src="./img2.jpeg" alt="image">
+    <img id="image3" src="./img3.jpeg" alt="image">
+    <img id="image4" src="./img4.jpeg" alt="image">
+    <img id="image5" src="./img5.jpeg" alt="image">
+    <img id="image6" src="./img6.jpeg" alt="image">
+    <img id="image7" src="./img7.jpeg" alt="image">
+    <img id="image8" src="./img8.jpeg" alt="image">
+    <img id="image9" src="./img9.jpeg" alt="image">
+  </div>
+
+  <script>
+
+    document.querySelectorAll('img').forEach(pic => {
+      pic.addEventListener('click', () => {
+        const isCurrentlyExpanded = pic.classList.contains('expand');
+        console.log(isCurrentlyExpanded);
+
+        document.querySelectorAll('img').forEach(img => {
+          img.classList.remove('expand');
+          img.classList.remove('remove');
+        });
+
+        if (!isCurrentlyExpanded) {
+          pic.classList.add('expand');
+
+          document.querySelectorAll('img').forEach(img => {
+            if (!img.classList.contains('expand')) {
+              img.classList.add('remove');
+            }
+          });
+        }
+      });
+    });
+
+
+  </script>
+</body>
+
+</html>

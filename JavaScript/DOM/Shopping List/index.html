@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table,
+    th,
+    td {
+      margin-top: 20px;
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+
+    tr:last-child {
+      background-color: rgb(185, 185, 185);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Grocery List</h1>
+  <input placeholder="item name" id="item-name-input" autocomplete>
+  <input placeholder="item price" type="number" id="item-price-input">
+  <button onclick="submitItem(event)">Add</button>
+
+
+  <table id="priceList">
+    <tr>
+      <th>Sr. No.</th>
+      <th>Title</th>
+      <th>Price</th>
+    </tr>
+
+    <tr class="grandTotalRow">
+      <td colspan="2">
+        Grand Total
+      </td>
+      <td class="grandTotal">0</td>
+    </tr>
+  </table>
+
+  <script>
+    let totalItems = 1;
+    let grandTotal = 0;
+    function submitItem(e) {
+      const itemName = document.querySelector('#item-name-input');
+      const itemPrice = document.querySelector('#item-price-input');
+      if (itemName.value == "" || itemPrice.value == "") {
+        e.preventDefault();
+        alert("Input fields cannot be empty!");
+        itemName.value == "" ? itemName.focus() : "";
+        itemPrice.value == "" ? itemPrice.focus() : "";
+        return;
+      }
+      if (isNaN(itemPrice.value)) {
+        e.preventDefault();
+        alert("Item price should be a number!");
+        itemPrice.focus();
+        return;
+      }
+
+      const row = document.createElement('tr');
+      const tableDataSrNo = document.createElement('td');
+      const tableDataItem = document.createElement('td');
+      const tableDataPrice = document.createElement('td');
+
+      tableDataSrNo.innerHTML = totalItems;
+      tableDataItem.innerHTML = itemName.value;
+      tableDataPrice.innerHTML = itemPrice.value;
+
+      const lastRow = document.querySelector('.grandTotalRow');
+      const parent = lastRow.parentNode;
+      parent.insertBefore(row, lastRow);      
+
+      row.appendChild(tableDataSrNo);
+      row.appendChild(tableDataItem);
+      row.appendChild(tableDataPrice);
+
+      totalItems = totalItems + 1;
+
+      let itemPriceValue = parseInt(itemPrice.value);
+      grandTotal = grandTotal + itemPriceValue;
+
+      let grandTotalData = document.querySelector('.grandTotal');
+      grandTotalData.innerHTML = grandTotal;
+
+      itemName.value = "";
+      itemPrice.value = "";
+    }
+  </script>
+</body>
+
+</html>
