@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    const numbers = [1, 2, 3, 4, 5, 6];
+
+    const squares = numbers.map(num => num * num);
+    const evens = numbers.filter(num => num % 2 === 0);
+    const total = numbers.reduce((acc, curr) => acc + curr);
+
+    console.log('Squares:', squares);
+    console.log('Evens:', evens);
+    console.log('Total:', total);
+
+    const person = {
+      name: 'Alice',
+      age: 30,
+      profession: 'Developer'
+    };
+
+    const { name, age, profession } = person;
+
+    console.log(`Name: ${name}, Age: ${age}, Profession: ${profession}`);
+
+    const array1 = [10, 20, 30];
+    const array2 = [40, 50];
+
+    const mergedArray = [...array1, ...array2];
+
+    console.log('Merged Array:', mergedArray);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div id="outer" style="padding: 30px; background: lightblue;">
+    Outer Div
+    <div id="inner" style="padding: 20px; background: lightgreen;">
+      Inner Div
+      <button id="btn">Click Me</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('outer').addEventListener('click', function () {
+      console.log('Outer Div Clicked');
+    });
+
+    document.getElementById('inner').addEventListener('click', function () {
+      console.log('Inner Div Clicked');
+    });
+
+    document.getElementById('btn').addEventListener('click', function () {
+      console.log('Button Clicked');
+    });    
+  </script>
+</body>
+
+</html>

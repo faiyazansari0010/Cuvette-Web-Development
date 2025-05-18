@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const promise1 = new Promise(function (resolve, reject) {
+      setTimeout(() =>{
+        resolve("Promise 1 Resolved");
+      }, 6000);
+    })
+
+    const promise2 = new Promise(function (resolve, reject) {
+      setTimeout(() =>{
+        resolve("Promise 2 Resolved");
+      }, 3000);
+    })
+
+    async function getData(){
+      console.log("Before Promise 1")
+      const data = await promise1;
+      console.log("Hello World in Promise 1");
+      console.log(data);
+
+      console.log("Before Promise 2")
+      const data1 = await promise2;
+      console.log("Hello World in promise 2");
+      console.log(data1);
+    }
+
+    getData();
+  </script>
+</body>
+</html>

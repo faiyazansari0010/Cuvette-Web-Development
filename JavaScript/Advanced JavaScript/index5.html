@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    //Hoisting
+    funHoisting();
+    function funHoisting() {
+      console.log("This is hoisting");
+    }
+
+
+    //Higher Order Function
+    function fun1(callback) {
+      callback();
+    }
+
+    const fun2 = () => {
+      console.log("This is HOF");
+    };
+
+    fun1(fun2);
+
+    
+    //Closure
+    let closure;
+    function counter() {
+
+      let count = 0;
+      closure = () => {
+        console.log(count + 1);
+      }
+      return closure;
+    }
+
+    const incrementCounter = counter();
+
+    incrementCounter();
+  </script>
+</body>
+
+</html>

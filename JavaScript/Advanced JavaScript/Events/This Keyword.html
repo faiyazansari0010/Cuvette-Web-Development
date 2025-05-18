@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-  
-  <script>
-    {
-      let value = "XYZ";
-      function closure(){
-        console.log(value);
-      }
-    }
 
-    closure();
+<body>
+
+  <script>
+    const user = {
+      name: 'Alice',
+      greet: function () {
+        console.log('Hello, ' + this.name);
+      }
+    };
+
+    user.greet();
+
   </script>
 </body>
+
 </html>
