@@ -1,0 +1,30 @@
+    #about {
+      padding: 32px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #about p {
+      max-width: 768px;
+      color: #111827; /* Tailwind gray-900 */
+      font-size: 1.125rem; /* text-lg */
+      margin-bottom: 32px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+      max-width: 1024px;
+    }
+
+    .skill-box {
+      background-color: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      font-weight: 500;
+    }
