@@ -6,7 +6,7 @@ function ToDoApp() {
 
   const [inputText, setInputText] = useState("");
   const [notes, setNotes] = useState([]);
-
+let nums = [1, 2, 3]
   return (
     <>
       <TextInput
@@ -21,6 +21,8 @@ function ToDoApp() {
         setNotes={setNotes}
       />
     </>
+
+    
   )
 }
 
