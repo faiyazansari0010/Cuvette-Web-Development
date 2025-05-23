@@ -11,7 +11,7 @@ function App() {
             Remove the comments only from the assignment that you want to view in the browser 
             Assignment 1 - <Portfolio />
             Assignment 2 - <ToDoApp />
-            Assignment 2 - <WeatherApp />
+            Assignment 3 - <WeatherApp />
       */}
 
       {/* <Portfolio /> */}

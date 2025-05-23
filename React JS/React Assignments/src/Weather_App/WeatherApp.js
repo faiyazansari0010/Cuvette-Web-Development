@@ -1,10 +1,5 @@
 import { useState } from "react";
-import { useEffect } from "react";
-
-// Create a Weather App that fetches data from OpenWeatherMap API.
-// Display current weather conditions, temperature, and humidity.
-// Implement search functionality to fetch weather
-// data for different cities.
+import { useEffect, useCallback } from "react";
 
 function WeatherApp() {
   const [cityInput, setCityInput] = useState("");
@@ -14,12 +9,13 @@ function WeatherApp() {
     temp: null,
     humidity: "",
   });
-
   function getData(city) {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ec12b48c6bdc2182cd828271a02978e0`
     )
-      .then((response) => response.json())
+      .then((response) => {
+        return response.json();
+      })
       .then((data) => {
         setWeatherData({
           weather: data.weather[0].description,
@@ -27,18 +23,16 @@ function WeatherApp() {
           humidity: data.main.humidity,
         });
         setDisplayCity(city);
-        setCityInput("")
+        setCityInput("");
       })
       .catch((err) => console.log("Error - ", err));
   }
-
   useEffect(() => {
     getData("Pune");
   }, []);
-
+  
   return (
     <>
-      {/* {getData()} */}
       <input
         type="text"
         placeholder="Enter city name..."
@@ -47,7 +41,7 @@ function WeatherApp() {
         }}
         value={cityInput}
       />
-      <button style={{ marginTop: "10px" }} onClick={()=>getData(cityInput)}>
+      <button style={{ marginTop: "10px" }} onClick={() => getData(cityInput)}>
         Search
       </button>
       <div>
