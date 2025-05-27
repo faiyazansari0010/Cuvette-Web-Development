@@ -6,12 +6,12 @@ function Counter() {
   const disptach = useDispatch();
   return (
     <>
-      <button style={{fontSize: "50px", cursor: "pointer"}} onClick={() => disptach(increment())}>+</button>
-      <span style={{padding: "10px", fontSize: "40px"}}>{counterValue}</span>
-      <button style={{fontSize: "50px", cursor: "pointer"}} onClick={() => disptach(decrement())}>-</button>
+      <button style={{ fontSize: "50px", cursor: "pointer" }} onClick={() => disptach(increment())}>+</button>
+      <span style={{ padding: "10px", fontSize: "40px" }}>{counterValue}</span>
+      <button style={{ fontSize: "50px", cursor: "pointer" }} onClick={() => disptach(decrement())}>-</button>
       <br />
       <br />
-      <button style={{padding: "10px", cursor: "pointer"}} onClick={() => disptach(reset())}>Reset</button>
+      <button style={{ padding: "10px", cursor: "pointer" }} onClick={() => disptach(reset())}>Reset</button>
     </>
   );
 }
