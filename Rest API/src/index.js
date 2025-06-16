@@ -8,11 +8,11 @@ const Mentor = require("./Models/mentorModel");
 
 app.post("/api/mentors", async (req, res) => {
   try {
-    const mentor = new Mentor(req.body);
-    const mentorData = await mentor.save();
+    const mentorData = await Mentor.create(req.body);
     res.send(mentorData);
   } catch (err) {
     console.log(err);
+    res.status(500).send("Internal Server Error");
   }
 });
 
